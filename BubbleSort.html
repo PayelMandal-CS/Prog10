@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bubble Sort</title>
+</head>
+<body>
+	<script>
+		var arr = [];
+		var size = parseFloat(prompt("Please enter the size")); 
+		for(var i=0;i<size;i++) 
+		{
+			arr[i] = parseFloat(prompt("Enter Element"));
+		}
+		function Sort(a,n)
+		{
+		var temp;
+		for(var i=0;i<n;i++)
+		{
+			for(var j=0;j<n-1;j++)
+			{
+				if(a[j]>a[j+1])
+				{
+					temp=a[j];
+					a[j]=a[j+1];
+					a[j+1]=temp;
+				}
+			}
+		}
+		alert(a);
+		}
+		Sort(arr,size);
+	</script>
+</body>
+</html>
