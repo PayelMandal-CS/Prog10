@@ -15,7 +15,7 @@
 	{
 		var size=parseInt(document.getElementById("n1").value);
 		let str = document.getElementById("n2").value;
-		var arr = str.split(",").map(function(item){return parseInt(item,10);});
+		var arr = str.split(",").map(function(item){return parseFloat(item,10);});
 		var temp;
 		for (var i = 0; i < size; i++) 
 		{
