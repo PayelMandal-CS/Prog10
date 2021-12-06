@@ -4,31 +4,32 @@
 	<title>Bubble Sort</title>
 </head>
 <body>
+	<label>Enter the size of the array:</label>
+	<input type="text" id="n1"/><br><br>
+	<label>Enter the elements seperated by ",":</label>
+	<input type="text" id="n2"/><br><br>
+	<input type="button" value="Bubble Sort" onclick="Sort()"/>
+	<div id="res"></div><br><br>
 	<script>
-		var arr = [];
-		var size = parseFloat(prompt("Please enter the size")); 
-		for(var i=0;i<size;i++) 
-		{
-			arr[i] = parseFloat(prompt("Enter Element"));
-		}
-		function Sort(a,n)
-		{
+	function Sort() 
+	{
+		var size=parseInt(document.getElementById("n1").value);
+		let str = document.getElementById("n2").value;
+		var arr = str.split(",").map(function(item){return parseInt(item,10);});
 		var temp;
-		for(var i=0;i<n;i++)
+		for (var i = 0; i < size; i++) 
 		{
-			for(var j=0;j<n-1;j++)
+			for (var j = 0; j < size-1; j++) 
 			{
-				if(a[j]>a[j+1])
-				{
-					temp=a[j];
-					a[j]=a[j+1];
-					a[j+1]=temp;
-				}
-			}
+				if (arr[j] > arr[j + 1]) {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
 		}
-		alert(a);
+		document.getElementById("res").innerHTML=arr;
 		}
-		Sort(arr,size);
+    }
 	</script>
 </body>
 </html>
